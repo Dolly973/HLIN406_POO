@@ -2,7 +2,7 @@ package TP2;
 
 public class Etudiant
 {
-//Les attributs
+	//Les attributs
 	private String nom; //nom de l'étudiant
 	private int dateDeNaissance; //date de naissance
 	private CodeIns codeIns; // code inscription
@@ -12,43 +12,75 @@ public class Etudiant
 	private float note3;
 	private int age;
 
-	public Etudiant(String leNom, int d, CodeIns ci, CodePays cp, float n1, float n2, float n3){
-	nom=leNom;
-	this.dateDeNaissance = d;
-	this.codePays = cp;
-	this.codeIns = ci;
-	this.age = 2017 - this.dateDeNaissance;
-	this.note1 = n1;
-	this.note2 = n2;
-	this.note3 = n3;
+	//Constructeurs
+	public Etudiant(String nomEtu, int dEtu, CodeIns ciEtu, CodePays cpEtu, float n1, float n2, float n3){
+		nom = nomEtu;
+		dateDeNaissance = dEtu;
+		codePays = cpEtu;
+		codeIns = ciEtu;
+		age = 2017 - dEtu;
+		note1 = n1;
+		note2 = n2;
+		note3 = n3;
 	}
+	//Accesseurs
+	//Retourne le nom de l'etudiant
 	public String getNom(){
 		return nom;
 	}
-	public String getcodeIns(){
-		return this.codeIns;
+	//Retourne le code d'inscription
+	public CodeIns getCodeIns(){
+		return codeIns;
 	}
-	public String getcodePays(){
-		return this.codePays;
+	//Retourne le type d'etudiant
+	public CodePays getCodePays(){
+		return codePays;
 	}
-
-	public float moyenne(){
-		double moyenne=(note1+note2+note3)/3;
-		return moyenne; 
+	//Retourne la date de naissance de l'etudiant
+	public int getDateDeNaissance(){
+		return dateDeNaissance;
 	}
-	public String mention(){
-	double M = this.moyenne;
-		String mention = "";
-	if (M >= 12) {
-	mention = "Mention assez Bien";
+	// Mutateurs
+	//Definit le nom de l'etudiant
+	public void setNom(String nomEtu){
+		nom = nomEtu;
 	}
-	if (M >= 14) {
-	mention = "Mention bien";
+	//Definit sa date de naissance
+	public void setDateDeNaissance(int dEtu){
+		dateDeNaissance = dEtu;
 	}
-	if (M >= 16) {
-	mention = "Mention tres bien";
+	//Definit son age
+	public void setAge(int aEtu){
+		age = aEtu;
 	}
-		}
+	//Definit son code d'inscription
+	public void setCodeIns(CodeIns ciEtu){
+		codeIns = ciEtu;
+	}
+	//Definit son code de pays
+	public void setCodePays(CodePays cpEtu){
+		codePays = cpEtu;
+	}
+	// Methodes
+	//Calcul de la moyenne
+	public double moyenne(){
+	double moyenne=(note1+note2+note3)/3;
+	return moyenne;
+}
+public String mention(double M){
+M = moyenne();
+String mention = "";
+if (M >= 12) {
+mention = "Mention assez Bien";
+}
+if (M >= 14) {
+mention = "Mention bien";
+}
+if (M >= 16) {
+mention = "Mention tres bien";
+}
+return mention;
+}
 
 //public String toString(){
 //	return "nom"+getNom()+"age"+getAge()+"dateDeNaissance"+getDateDeNaissance()+"codeIns"+getCodeIns+"codePays"+get

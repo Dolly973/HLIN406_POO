@@ -12,19 +12,19 @@ public class TestScanner
     /*
     while (i == -1)
     {
-
-    try {
+      
+    try { 
     	System.out.print("un entier ? ");
-    	i = sc.nextInt();
+    	i = sc.nextInt();   	
     	}
     catch (Exception e) {
-    		System.out.println(e);
+    		System.out.println(e); 
     	}
     }
     */
 
     System.out.print("un entier ? ");
-	int i = sc.nextInt();
+	int i = sc.nextInt();  
     System.out.print("entier lu : "+i+"\n");
 
     System.out.print("une chaine ? ");
