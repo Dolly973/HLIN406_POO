@@ -2,12 +2,12 @@ package TP3;
 
 public abstract class ObjetPostal {
 //Les attributs
- private String origine;
- private String destination;
- private String codePostal;
- private double poids;
- private double volume;
- private TauxRec tauxRec;
+ protected String origine;
+ protected String destination;
+ protected String codePostal;
+ protected double poids;
+ protected double volume;
+ protected TauxRec tauxRec;
  
 //Constructeur
 
@@ -24,7 +24,7 @@ public ObjetPostal(String o, String d, String cp,double p,double v,TauxRec t){
 origine=o;
 destination=d;
 codePostal=cp;
-poids=p;
+this.setPoids(p);
 volume=v;
 tauxRec=t;
 }
@@ -79,9 +79,21 @@ public void setTauxRec(TauxRec t){
 	tauxRec=t;
 	}
 // Methodes
-
-public abstract double  TauxRemboursement();
-public abstract double TarifAffranchissement();
+public void txRec(int t){
+	switch (this.tauxRec){
+	case zero:
+		t = 0;
+		break;
+	case un:
+		t = 1;
+		break;
+	case deux:
+		t = 2;
+		break;
+	}
+}
+public abstract double  tarifRemboursement();
+public abstract double tarifAffranchissement();
 public String toString(){
 return origine+"/"+destination+"/"+codePostal+"/"+poids+"/"+volume+"/"+tauxRec;}
 }

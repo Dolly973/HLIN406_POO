@@ -1,4 +1,4 @@
-package MesPremieresClasses;
+package TP1.MesPremieresClasses;
 
 import java.util.Scanner;
 

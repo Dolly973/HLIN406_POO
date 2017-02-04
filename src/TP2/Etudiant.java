@@ -23,7 +23,7 @@ public class Etudiant
 		note2 = n2;
 		note3 = n3;
 	}
-	//Accesseurs
+	//Accesseurs5444
 	//Retourne le nom de l'etudiant
 	public String getNom(){
 		return nom;

@@ -1,4 +1,4 @@
-package MesPremieresClasses;
+package TP1.MesPremieresClasses;
 
 public class SommeEtProduitEntreeParamMain {
   public static void main(String[] a) throws java.io.IOException

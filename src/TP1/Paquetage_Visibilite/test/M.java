@@ -1,6 +1,6 @@
-package test;
+package TP1.Paquetage_Visibilite.test;
 
-import p1.B;
+import TP1.Paquetage_Visibilite.p1.B;
 
 public class M{
   /**

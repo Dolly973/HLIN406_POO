@@ -1,4 +1,4 @@
-package p2;
+package TP1.Paquetage_Visibilite.p2;
 
 public class C{
   public int c1=1;

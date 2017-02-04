@@ -1,4 +1,4 @@
-package p1;
+package TP1.Paquetage_Visibilite.p1;
 
 //import p2.C;
 public class B{
