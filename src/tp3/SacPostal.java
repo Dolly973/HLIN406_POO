@@ -32,19 +32,24 @@ public class SacPostal {
 
 	public boolean ajouter(ObjetPostal obj){
 		boolean b = true;
-		double v = obj.getVolume();
-		if(v<= capacite){ 
+		if(obj.getVolume()<= capacite){ 
 			this.contenu.add(obj);
-			this.setCapacite(capacite - v);	
+			this.setCapacite(capacite - obj.getVolume());
 		}
 		else b = false;
 		return b;
 	}
-	public 
+	public boolean retirer(ObjetPostal obj){
+		boolean b = this.contenu.remove(obj);
+		if (b)  {this.setCapacite(this.capacite + obj.getVolume());
+		}
+		return b;
+	}
+	public double capaciteRestante(){
+		return this.capaciteMax - this.capacite;
+	}
 	public double valeurRemboursement(){
 
 		return 0;
 
 	}
-
-}
