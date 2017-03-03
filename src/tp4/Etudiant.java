@@ -13,6 +13,9 @@ public class Etudiant
 	private int age;
 
 	//Constructeurs
+	public Etudiant()
+	{
+	}
 	public Etudiant(String nomEtu, int dEtu, CodeIns ciEtu, CodePays cpEtu, float n1, float n2, float n3){
 		nom = nomEtu;
 		dateDeNaissance = dEtu;
