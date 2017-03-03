@@ -85,7 +85,22 @@ public class Etudiant
 		return mention;
 	}
 	public String ligneResultats(){
-		return "Nom = " + nom + " Moyenne = "+ moyenne()+ " Mention = " + mention();
+		double M = this.moyenne();
+		String S = "Nom: "+this.nom+", Moyenne: "+M+"/20";
+		if(M < 10){
+			S = S+" Ajourné(e), Modules obtenus :";
+			if(note1 > 10)
+				S = S+" Module1,";
+			if(note2 > 10)
+				S = S+" Module2,";
+			if(note3 > 10)
+				S = S+" Module3,";
+		}
+		else
+			S = S+" Reçu";
+		if(M >=12)
+			S = S +" " + this.mention();		
+		return S;							
 	}
 	public String toString(){
 		return "Nom = " + nom + " age = " + age + " Né le = "+ dateDeNaissance + " codeIns = " + codeIns + " codePays= " + codePays;
