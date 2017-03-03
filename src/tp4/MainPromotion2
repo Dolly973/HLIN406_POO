@@ -1,0 +1,40 @@
+package TP4;
+
+import java.util.ArrayList;
+
+public class MainPromotion2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Etudiant Etu1 = new Etudiant("Dolores", 1993, TP4.CodeIns.inscription, TP4.CodePays.etrfr, 10, 7, 16);
+		Etudiant Etu2 = new Etudiant("Loic",1992, TP4.CodeIns.reinscription, TP4.CodePays.etrnonfr, 18,14,15);
+		Etudiant Etu3 = new Etudiant("Dolly",1993, TP4.CodeIns.reinscription, TP4.CodePays.fr, 8,4,11);
+		Etudiant Etu4 = new Etudiant("Camille",1993, TP4.CodeIns.inscription, TP4.CodePays.etrnonfr, 8,14,11);
+		Etudiant Etu5 = new Etudiant("Megan", 1994, TP4.CodeIns.inscription, TP4.CodePays.etrfr, 18, 15, 10);
+		Etudiant Etu6 = new Etudiant("André", 1995, TP4.CodeIns.inscription, TP4.CodePays.etrnonfr, 4, 20, 18);
+		Etudiant Etu7 = new Etudiant("Ressou", 1993, TP4.CodeIns.inscription, TP4.CodePays.etrnonfr, 17, 20, 18);
+		Etudiant Etu8 = new Etudiant("Marwa", 1994, TP4.CodeIns.reinscription, TP4.CodePays.etrnonfr,10, 15, 10);
+		
+		Promotion PromoMain = new Promotion(2017);
+		PromoMain.inscrire(Etu1);
+		PromoMain.inscrire(Etu2);
+		PromoMain.inscrire(Etu3);
+		PromoMain.inscrire(Etu4);
+		PromoMain.inscrire(Etu5);
+		PromoMain.inscrire(Etu6);
+		PromoMain.inscrire(Etu7);
+		PromoMain.inscrire(Etu8);
+		
+		System.out.println("Le nombre de nouveaux non francophones est :"+ PromoMain.nouveauxInscritsNonFrancophones().size());
+		System.out.println("les 3 majors de la promotion sont: ");
+		ArrayList<Etudiant> majors = PromoMain.majors(3);
+		System.out.println("   1er: "+majors.get(0).getNom());
+		System.out.println("   2eme: "+majors.get(1).getNom());
+		System.out.println("   3eme: "+majors.get(2).getNom());
+		
+		PromoMain.afficheResultats();
+
+
+	}
+
+}
