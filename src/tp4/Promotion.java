@@ -59,6 +59,48 @@ public class Promotion {
 		}
 		return new Etudiant();
 	}
+		public  ArrayList<Etudiant> admis(){
+		ArrayList<Etudiant> admis = new ArrayList<Etudiant>();
+		for (Etudiant etu : this.collection){
+			if (etu.moyenne()>= 10 )
+				admis.add(etu);
+		}
+		return admis;
+	}
+	public ArrayList<Etudiant> nouveauxInscritsNonFrancophones(){
+		ArrayList<Etudiant> nouveauxInscritsNonFrancophones = new ArrayList<Etudiant>();
+		for (Etudiant etu : this.collection){
+			if (etu.getCodePays().equals(CodePays.etrnonfr) && etu.getCodeIns().equals(CodeIns.inscription))
+				nouveauxInscritsNonFrancophones.add(etu);
+		}
+		return nouveauxInscritsNonFrancophones;
+	}
+	//public ArrayList<Etudiant> leMajorDePromo(){
+		//ArrayList<Etudiant> leMajorDePromo = new ArrayList<Etudiant>();
+		//for (Etudiant etu : this.collection){
+			//if (etu.)
+		//}
+	//}
+	// partie prise sur un autres etudiant, pas tres bien comprise
+	public int meilleur(ArrayList<Etudiant> A){
+		int meilleur = 0;
+		for(int i = 1; i < A.size(); i++)
+			if(A.get(i).moyenne() > A.get(meilleur).moyenne()){
+				meilleur = i; 
+			}
+		return meilleur;
+	}
+
+	public ArrayList<Etudiant> majors(int nb){
+		ArrayList<Etudiant> promo = (ArrayList<Etudiant>)this.collection.clone();
+		ArrayList<Etudiant> majors = new ArrayList<Etudiant>();
+		for(int i = 0; i < nb && !promo.isEmpty(); i++){
+			int meilleur = meilleur(promo);
+			majors.add(promo.get(meilleur));
+			promo.remove(meilleur);
+		}
+		return majors;
+	}
 @Override
 public String toString() {
 	return "Promotion [annee=" + annee + ", Nombres Etudiants=" + getNbrEtudiants()
