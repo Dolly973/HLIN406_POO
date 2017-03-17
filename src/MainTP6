@@ -1,0 +1,16 @@
+package TP6;
+
+public class main {
+
+	public main(){
+		
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Piece vis=new Piece(401);
+		PieceDeBase clou=new PieceDeBase(double s,double prix, double dureeGarantie, double dureeFabrication);
+		
+	}
+
+}
