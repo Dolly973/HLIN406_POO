@@ -28,6 +28,9 @@ public static int getprefixe() {
 public static void setprefixe() {
 	PieceDeBase.prefixe = 00;
 }
+public String reference(){
+	return "prefixe"+" suffixe";
+}
 public double getPrix() {
 	return prix;
 }
@@ -49,9 +52,7 @@ public void setDureeFabrication(double dureeFabrication) {
 @Override
 public String toString() {
 	return "PieceDeBase [prix=" + prix + ", dureeGarantie=" + dureeGarantie + ", dureeFabrication=" + dureeFabrication
-			+ ", suffixe=" + suffixe + ", getPrix()=" + getPrix() + ", getDureeGarantie()=" + getDureeGarantie()
-			+ ", getDureeFabrication()=" + getDureeFabrication() + ", getSuffixe()=" + getSuffixe() + ", getClass()="
-			+ getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
+			+ ", reference()=" + reference() + ", getPrix()=" + getPrix() + ", getDureeGarantie()=" + getDureeGarantie()
+			+ ", getDureeFabrication()=" + getDureeFabrication() + "]";
 }
-
 }
