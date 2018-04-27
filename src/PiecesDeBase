@@ -1,0 +1,39 @@
+package quincallerie;
+
+public class PiecesDeBase extends Pieces{
+private static String prefixe="00";
+private float prix;
+private float dureeGarantie;
+private int dureeFabrication;
+	public PiecesDeBase(String n, String rb, float p,float dg, int df) {
+		super(n, rb);
+		// TODO Auto-generated constructor stub
+		this.prix=p;
+		this.dureeGarantie= dg;
+		this.dureeFabrication= df;
+	}
+
+	public float prix() {
+		return prix;
+	}
+
+	public String prefixe() {
+		return prefixe;
+	}
+
+	@Override
+	public float dureeGarantie() {
+		// TODO Auto-generated method stub
+		return dureeGarantie;
+	}
+
+	@Override
+	public int dureeFabrication() {
+		// TODO Auto-generated method stub
+		return dureeFabrication;
+	}
+	public String afficheComposants() {
+		return  "nom : "+ getNom()+"\n  Référence : "+reference() +"\n Prix : "+prix() +"\n Garantie : "+ dureeGarantie()+"\n durée de fabrication : "+ dureeFabrication();
+	
+	}
+}
