@@ -1,0 +1,34 @@
+package quincallerie;
+
+public abstract class Pieces {
+private String nom;
+private String refBase;
+
+public Pieces(String n,String rb) {
+	this.setNom(n);
+	this.refBase=rb;
+}
+public abstract float prix();
+public abstract String prefixe();
+public String reference(){
+	return prefixe()+ refBase;
+}
+public abstract float dureeGarantie();
+public abstract int dureeFabrication();
+//public String toString() {
+//	return "nom : "+this.nom +"\n  Référence : "+reference() +"\n Prix : "+prix() +"\n Garantie : "+ dureeGarantie()+"\n durée de fabrication : "+ dureeFabrication()
+//;}
+public abstract String afficheComposants();
+public String getRefBase() {
+	return refBase;
+}
+public void setRefBase(String refBase) {
+	this.refBase = refBase;
+}
+public String getNom() {
+	return nom;
+}
+public void setNom(String nom) {
+	this.nom = nom;
+}
+}
