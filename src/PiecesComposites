@@ -1,0 +1,66 @@
+package quincallerie;
+
+import java.util.ArrayList;
+
+public abstract class PiecesComposites extends Pieces{
+
+	private ArrayList<Pieces> composants;
+	public ArrayList<Pieces> getComposants() {
+		return composants;
+	}
+	public void setComposants(ArrayList<Pieces> composants) {
+		this.composants = composants;
+	}
+	private String nomcomposite;
+	
+	public PiecesComposites(String n, String rb, String nc) {
+		super(n, rb);
+		// TODO Auto-generated constructor stub
+		this.composants= new ArrayList <Pieces>();
+		this.nomcomposite=nc;
+	}
+	public float prix() {
+		int i;
+		float sum = 0;
+		for(i = 0; i < composants.size(); i++)
+		    {sum += composants.get(i).prix();}
+		return sum;
+	}
+	public int dureeFabrication() {
+		int max=0;// on peux aussi initialiser a composants.get(0)
+		int i;
+		for(i = 0; i < composants.size(); i++)
+	    {if(composants.get(i).dureeFabrication() > max) {
+	    	max = composants.get(i).dureeFabrication();}
+	    }
+	return max;
+	}
+	public float dureeGarantie() {
+		float min=0;// on peux aussi initialiser a composants.get(0)
+		int i;
+		for(i = 0; i < composants.size(); i++)
+	    {if(composants.get(i).dureeGarantie() < min) {
+	    	min = composants.get(i).dureeGarantie();}
+	    }
+	return min;
+	}
+	public String affiche()
+		{return "nom : "+ this.nomcomposite+"\n  Référence : "+reference() +"\n Prix : "+prix() +"\n Garantie : "+ dureeGarantie()+"\n durée de fabrication : "+ dureeFabrication();
+		}
+	public String afficheComposants() {
+		String c=" ";
+		int i=0;
+		for(i=0; i< composants.size();i++)
+		{c= "\t "+ composants.get(i).getNom()+" - "+composants.get(i).reference();}
+		return c;
+	}
+	public String afficheTout() {
+		return affiche()+ "\n composants : \n "+ afficheComposants();
+		}
+	public String getNomcomposite() {
+		return nomcomposite;
+	}
+	public void setNomcomposite(String nomcomposite) {
+		this.nomcomposite = nomcomposite;
+	}
+}
