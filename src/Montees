@@ -1,0 +1,14 @@
+package quincallerie;
+
+public class Montees extends PiecesComposites{
+
+	public Montees(String n, String rb) {
+		super(n, rb);
+		// TODO Auto-generated constructor stub
+	}
+	public String prefixe() {
+		// TODO Auto-generated method stub
+		return "02";
+	}
+
+}
