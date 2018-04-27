@@ -1,0 +1,35 @@
+package quincallerie;
+
+public class Kit extends PiecesComposites{
+
+	private int dureeMontageParticulier;
+	
+	public Kit(String n, String rb,String nc, int d) {
+		super(n, rb, nc);
+		this.dureeMontageParticulier=d;
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public String prefixe() {
+		// TODO Auto-generated method stub
+		return "01";
+	}
+
+	public int getDureeMontageParticulier() {
+		return dureeMontageParticulier;
+	}
+
+	public void setDureeMontageParticulier(int dureeMontageParticulier) {
+		this.dureeMontageParticulier = dureeMontageParticulier;
+	}
+	public String affiche()
+	{return "nom : "+ getNomcomposite()+"\n  Référence : "+reference() +"\n Prix : "+prix() +"\n Garantie : "+ dureeGarantie()+"\n durée de fabrication : "+ dureeFabrication()+"\n durée montage particulier : "+this.dureeMontageParticulier;
+	}
+public String afficheComposants() {
+	return super.afficheComposants();
+}
+public String afficheTout() {
+	return affiche()+ "\n composants : \n "+ afficheComposants();
+	}
+}
